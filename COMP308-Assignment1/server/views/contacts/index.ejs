@@ -1,0 +1,43 @@
+<!--
+File name: index.ejs
+Author: Shawn McLaughlin <shawnmcdev@gmail.com>
+Site: https://shawnmcla-portfolio2.herokuapp.com/
+Description: Content EJS file for contacts index.
+-->
+<% include ../partials/header.ejs %>
+  <div class="container">
+    <div class="col-md-offset-2 col-md-5">
+      <h1> Contacts List </h1>
+      <a href="/contacts/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a Contact</a>
+      <br>
+      <table class="table table-striped table-hover table-bordered">
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Contact No.</th>
+          <th class="text-center">Email</th>
+          <th class="text-center"></th>
+          <th class="text-center"></th>
+        </tr>
+        <% for (let count = 0; count < contacts.length; count++) { %>
+          <tr>
+            <!-- row tmeplate -->
+            <td class="text-center">
+              <%= contacts[count].name %>
+            </td>
+            <td class="text-center">
+              <%= contacts[count].number %>
+            </td>
+            <td class="text-center">
+              <%= contacts[count].email %>
+            </td>
+            <td class="text-center"><a class="btn btn-primary" href="/contacts/<%= contacts[count]._id %>" role="button"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
+            <td class="text-center">
+              <a href="/contacts/delete/<%= contacts[count]._id %>" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i> Delete</a>
+            </td>
+          </tr>
+          <% } %>
+      </table>
+    </div>
+  </div>
+  <% include ../partials/footer.ejs %>
