@@ -1,7 +1,7 @@
 /**
  * File name: index.js
  * Author: Shawn McLaughlin <shawnmcdev@gmail.com>
- * Site: https://shawnmcla-portfolio.herokuapp.com/
+ * Site: https://shawnmcla-portfolio2.herokuapp.com/
  * Description: Routing instructions for URLs
  */
 
@@ -14,11 +14,6 @@ let passport = require('passport');
 // define user models
 let UserModel = require('../models/users');
 let User = UserModel.User;
-
-/*
-// define game model
-let game = require('../models/games');
-*/
 
 // function to check if the user is authenticated
 function requireAuth(req, res, next) {
@@ -62,7 +57,7 @@ router.get('/login', (req, res, next) => {
 });
 // POST /login
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/contacts',
   failureRedirect: '/login',
   failureFlash: true
 }));
@@ -108,7 +103,7 @@ router.post('/register', (req, res, next) => {
       }
       // if registration is successful
       return passport.authenticate('local')(req, res, () => {
-        res.redirect('/');
+        res.redirect('/contacts');
       });
     });
 });

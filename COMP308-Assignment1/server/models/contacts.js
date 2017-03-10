@@ -19,4 +19,4 @@ let contactsSchema = Schema({
     });
 
 
-exports.Contact = mongoose.model('contact', usersSchema);
+module.exports = mongoose.model('contact', contactsSchema);

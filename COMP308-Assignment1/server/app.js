@@ -35,6 +35,7 @@ db.once('open', () => {
 });
 
 let index = require('./routes/index');
+let contacts = require('./routes/contacts');
 let app = express();
 
 // view engine setup
@@ -61,7 +62,9 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/contacts', contacts);
 app.use('/', index);
+
 
 //Passport User Configuration
 let UserModel = require('./models/users');
