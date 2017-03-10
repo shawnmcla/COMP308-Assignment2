@@ -60,6 +60,12 @@ Description: Partial EJS file for top part of HTML pages.
         <% } else { %>
           <li><a href="/contact"><i class="fa fa-envelope-o fa-lg"></i> Contact</a></li>
         <% } %>
+
+        <% if(displayName) { %>
+          <li><a href="/logout"><i class="fa fa-sign-out"></i> Logged in as <%= displayName %>. Log Out</a></li>
+        <% } else {%>
+          <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+        <% } %>
       </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
