@@ -12,9 +12,29 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+//auth modules
+let session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let LocalStrategy = passportlocal.Strategy;
+let flash = require('connect-flash'); //display errors/login messages
+
+// adding the mongoose module
+let mongoose = require('mongoose');
+
+//mongodb URI
+let dbConfig = require('./config/db');
+
+// connect to mongodb and use the 'games' database
+mongoose.connect(process.env.URI || dbConfig.URI);
+
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log("Connected to MongoDB");
+});
 
 let index = require('./routes/index');
-
 let app = express();
 
 // view engine setup
@@ -28,13 +48,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
+
+// setup sessions
+app.use(session({
+  secret: "CommunismWillPrevail",
+  saveUninitialized: true,
+  resave: true
+}));
+
+//initialize passport and flash
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', index);
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+//Passport User Configuration
+let UserModel = require('./models/users');
+let User = UserModel.User;
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+// Handle 404 Errors
+app.use(function (req, res) {
+  res.status(400);
+  res.render('errors/404', {
+    title: '404: File Not Found'
+  });
+});
+
+// Handle 500 Errors
+app.use(function (error, req, res, next) {
+  res.status(500);
+  res.render('errors/500', {
+    title: '500: Internal Server Error',
+    error: error
+  });
 });
 
 // error handler
@@ -45,7 +96,8 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', {'title': 'Error'});
+  console.log(err);
+  res.render('error', { 'title': 'Error' });
 });
 
 module.exports = app;
