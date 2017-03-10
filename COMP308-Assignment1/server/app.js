@@ -1,7 +1,7 @@
 /**
  * File name: app.js
  * Author: Shawn McLaughlin <shawnmcdev@gmail.com>
- * Site: https://shawnmcla-portfolio.herokuapp.com/
+ * Site: https://shawnmcla-portfolio2.herokuapp.com/
  * Description: Web App entry point. Initializes modules.
  */
 
