@@ -1,0 +1,40 @@
+{
+  "name": "shawnmcla-portfolio-2",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.5.0"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  },
+  "description": "Assignment 2 for the Emerging Technologies course at Centennial College",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawnmcla/COMP308-Assignment2.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "Portfolio",
+    "COMP308"
+  ],
+  "author": "Shawn McLaughlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shawnmcla/COMP308-Assignment2/issues"
+  },
+  "homepage": "https://github.com/shawnmcla/COMP308-Assignment2#readme"
+}

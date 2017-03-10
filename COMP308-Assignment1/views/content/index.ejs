@@ -1,0 +1,46 @@
+<!--
+File name: index.ejs
+Author: Shawn McLaughlin <shawnmcdev@gmail.com>
+Site: https://shawnmcla-portfolio.herokuapp.com/
+Description: Content EJS file for home page.
+-->
+<% include ../partials/header.ejs %>
+<!-- CONTENT PAGE FOR HOMEPAGE -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome</h1>
+        <p>Greetings. My name is Shawn McLaughlin, welcome to my website!</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>About</h2>
+          <p>My name is Shawn McLaughlin. I am a Software Egineering student at Centennial College in Toronto, Canada&hellip;</p>
+          <p><a class="btn btn-default" href="/about" role="button">Read more &raquo;</a></p>
+        </div>
+      <div class="col-md-3">
+          <h2>Projects</h2>
+          <p>Here lies information about certain projects I have been or currently am working on, either for school or personal.</p>
+          <p><a class="btn btn-default" href="/projects" role="button">View projects &raquo;</a></p>
+       </div>
+        <div class="col-md-3">
+          <h2>Services</h2>
+          <p>My experience is primarily in Object Oriented Programming using C#, Java, JavaScript and Python, both on the front end and back end.</p>
+          <p><a class="btn btn-default" href="/services" role="button">Read more &raquo;</a></p>
+       </div>
+        <div class="col-md-3">
+          <h2>Contact</h2>
+          <p>Feel free to contact me for business inquiries (or anything else, really). I can be reached by e-mail directly or using the contact form provided.</p>
+          <p><a class="btn btn-default" href="/contact" role="button">Contact me &raquo;</a></p>
+        </div>
+      </div>
+  </div>
+<% include ../partials/footer.ejs %>

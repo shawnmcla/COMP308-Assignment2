@@ -1,0 +1,131 @@
+/**
+ * File name: app.css
+ * Author: Shawn McLaughlin <shawnmcdev@gmail.com>
+ * Site: https://shawnmcla-portfolio.herokuapp.com/
+ * Description: Custom stylings for the website.
+ */
+
+body {
+    background: #EEE;
+}
+
+
+/* 
+
+ top nav bar styling 
+
+ */
+
+
+/* override bootstrap stylings */
+
+.navbar {
+    background-color: #002500;
+    border-radius: 0px;
+    padding-bottom: 0px;
+    border: 0;
+}
+
+
+/* subtle text color transition on hover */
+
+.navbar a {
+    color: #EEE;
+    -o-transition: color .2s ease-out, background .2s ease-in;
+    -ms-transition: color .2s ease-out, background .2s ease-in;
+    -moz-transition: color .2s ease-out, background .2s ease-in;
+    -webkit-transition: color .2s ease-out, background .2s ease-in;
+    transition: color .2s ease-out, background .2s ease-in;
+}
+
+.navbar-nav li.active {
+    background: #333;
+}
+
+.navbar-nav li.active a {
+    color: #BBB;
+}
+
+.navbar a:hover {
+    color: #BBB
+}
+
+
+/* remove default bootstrap background on hover */
+
+.navbar-nav>li>a:hover,
+.navbar-nav>li>a:focus {
+    background-color: transparent;
+}
+
+
+/* 
+
+styling for logo area of navbar
+
+ */
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    width: auto;
+}
+
+
+/*
+
+content area stylings
+
+*/
+
+h1,
+h2,
+h3 {
+    font-family: 'Vesper Libre', serif;
+}
+
+p {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.btn-default {
+    background: #FFF;
+    text-shadow: none;
+}
+
+.btn-default:hover {
+    background: #EEE;
+}
+
+.project-img {
+    padding-top: 20px;
+}
+
+
+/*
+
+sticky footer styles from bootstrap examples
+http://getbootstrap.com/examples/sticky-footer/
+
+*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 25px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+<!--
+File name: about.ejs
+Author: Shawn McLaughlin <shawnmcdev@gmail.com>
+Site: https://shawnmcla-portfolio.herokuapp.com/
+Description: Content EJS file for about page.
+-->
+<% include ../partials/header.ejs %>
+<!-- CONTENT PAGE FOR ABOUT -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-5">
+        <h1><%= title %></h1>
+        <p>Greetings! My name is Shawn McLaughlin. I am a final semester Software Egineering student at Centennial College in Toronto, Ontario, Canada, originally from the beautiful (albeit slightly boring) province of New Brunswick in Atlantic Canada! I will be relocating to the region of Ottawa in the spring of 2017, upon graduation.</p>
+
+        <p>Now for some corny and/or boring history about me. Ever since a very young age I was fascinated by computers. My interest was piqued when I woke up from a nap one night as a young child and saw my father use a computer that he had just purchased. My mind was blown. Shortly after, I 
+        got to have my own computer in my bedroom. I wish I was as hip as the people who can claim they started using computers in the eras of massive mainframes and using punchcards to program but alas, my first computer was a quite mediocre 
+        Pentium 2(?), 128 MegaBytes of RAM, a 10 Gigabyte HardDrive and rocking Windows 2000. It didn't take me long to start wondering and asking myself questions such as "how do people create programs?" and "how are websites made?". After a bit of 
+        research, I found myself copying and pasting various bits of HTML that I didn't understand to build "webpages" (I use the word lightly, here). Fast forward a bit, I'm now about to finish my education and hope to embark on a long, fruitful and 
+        exciting career where my knowledge and skills are constantly challenged, where I have to learn (which I love doing! I mean, who doesn't enjoy learning? It is one of the true joys of life. Anyways, I digress.) constantly.</p>
+
+        <p>
+        If you would like to learn about what exactly I do or know, please do visit my <a href="/services">services</a> and <a href="/projects">projects</a> pages. Want to get in touch for any reason? <a href="/contact">drop me a line! I don't bite.</a>
+        </p>
+    </div>
+    <div class="col-md-3">
+      <img alt="Drawing of me" class="img-responsive" src="/Assets/images/me.png"/>
+      <p class="small text-muted text-center">That is me. Kind of. I'm not really a cartoon. I wish I was.</p>
+    </div>
+  </div>  
+</div>
+<% include ../partials/footer.ejs %>
